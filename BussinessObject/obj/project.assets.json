@@ -3884,11 +3884,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj",
+      "projectUniqueName": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj",
       "projectName": "BussinessObject",
-      "projectPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj",
+      "projectPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj",
       "packagesPath": "C:\\Users\\haolu\\.nuget\\packages\\",
-      "outputPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\BussinessObject\\obj\\",
+      "outputPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\BussinessObject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\haolu\\AppData\\Roaming\\NuGet\\NuGet.Config",

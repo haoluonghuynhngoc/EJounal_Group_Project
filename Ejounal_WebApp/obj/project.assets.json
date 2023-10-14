@@ -11669,11 +11669,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\Ejounal_WebApp\\Ejounal_WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\Ejounal_WebApp\\Ejounal_WebApp.csproj",
       "projectName": "Ejounal_WebApp",
-      "projectPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\Ejounal_WebApp\\Ejounal_WebApp.csproj",
+      "projectPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\Ejounal_WebApp\\Ejounal_WebApp.csproj",
       "packagesPath": "C:\\Users\\haolu\\.nuget\\packages\\",
-      "outputPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\Ejounal_WebApp\\obj\\",
+      "outputPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\Ejounal_WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\haolu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11690,8 +11690,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj"
             }
           }
         }

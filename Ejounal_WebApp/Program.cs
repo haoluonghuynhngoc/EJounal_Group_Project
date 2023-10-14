@@ -15,10 +15,10 @@ options.UseSqlServer(
 // add dependency
 builder.Services.AddScoped<IArticlesRatingRepository, ArticlesRatingRepositoryImpl>();
 builder.Services.AddScoped<IArticlesRepository, ArticlesRepositoryImpl>();
-builder.Services.AddScoped<ICategoryRepository, CategoryRepositoryImpl>();
+builder.Services.AddScoped<IFieldsRepository, CategoryRepositoryImpl>();
 builder.Services.AddScoped<IJournalRepository, JournalRepositoryImpl>();
 builder.Services.AddScoped<IJournalRepository, JournalRepositoryImpl>();
-builder.Services.AddScoped<IReviewRepository, ReviewRepositoryImpl>();
+builder.Services.AddScoped<IMajorRepository, ReviewRepositoryImpl>();
 builder.Services.AddScoped<IRoleRepository, RoleRepositoryImpl>();
 builder.Services.AddScoped<IUserRepository, UserRepositoryImpl>();
 

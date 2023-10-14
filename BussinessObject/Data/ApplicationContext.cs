@@ -1,11 +1,6 @@
 ﻿using BussinessObject.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BussinessObject.Data
 {
@@ -18,14 +13,21 @@ namespace BussinessObject.Data
         {
         }
 
-        public  DbSet<Articles> Articles { get; set; }
-        public  DbSet<ArticlesRating> ArticlesRatings { get; set; }
-        public  DbSet<Category> Categories { get; set; }
-        public  DbSet<Journals> Journals { get; set; }
-        public  DbSet<Review> Reviews { get; set; }
-        public  DbSet<Role> Roles { get; set; }
-        public  DbSet<Users> Users { get; set; }
-        public  DbSet<UsersRole> UsersRoles { get; set; }
+        public DbSet<Articles> Articles { get; set; }
+        public DbSet<Fields> Fields { get; set; }
+        public DbSet<Journals> Journals { get; set; }
+        public DbSet<Majors> Majors { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Users> Users { get; set; }
+
+        // Join Table
+        public DbSet<UsersRole> UsersRoles { get; set; }
+        public DbSet<UserMajors> UserMajors { get; set; }
+        public DbSet<ReviewResult> ReviewResults { get; set; }
+        public DbSet<ReviewFields> ReviewFields { get; set; }
+        public DbSet<Contributors> Contributors { get; set; }
+        public DbSet<ArticleFields> ArticleFields { get; set; }
+        // end Join table
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
        => optionsBuilder.UseSqlServer(GetConnectionString());
@@ -43,8 +45,29 @@ namespace BussinessObject.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UsersRole>(entity => {
+            modelBuilder.Entity<UsersRole>(entity =>
+            {
                 entity.HasKey(ur => new { ur.RoleId, ur.UsersId });
+            });
+            modelBuilder.Entity<UserMajors>(entity =>
+            {
+                entity.HasKey(ur => new { ur.UsersId, ur.MajorId });
+            });
+            modelBuilder.Entity<ReviewResult>(entity =>
+            {
+                entity.HasKey(ur => new { ur.ArticlesId, ur.UsersId });
+            });
+            modelBuilder.Entity<ReviewFields>(entity =>
+            {
+                entity.HasKey(ur => new { ur.FieldsId, ur.UsersId });
+            });
+            modelBuilder.Entity<Contributors>(entity =>
+            {
+                entity.HasKey(ur => new { ur.ArticlesId, ur.UsersId });
+            });
+            modelBuilder.Entity<ArticleFields>(entity =>
+            {
+                entity.HasKey(ur => new { ur.ArticlesId, ur.FieldsId });
             });
         }
     }
