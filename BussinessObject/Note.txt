@@ -1,0 +1,7 @@
+﻿
+
+==> User Terminal
+dotnet ef migrations add <tên migration> // Tạo nếu chưa có thư mục Migrations 
+dotnet ef database update                // Sử dụng nếu chưa có data base và bắt buộc phải có thư mục Migrations
+
+
