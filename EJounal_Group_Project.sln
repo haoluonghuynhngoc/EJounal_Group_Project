@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BussinessObject", "Bussines
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{78A8398B-961C-40B7-A54D-D37DC93C8A2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejounal_WebApp", "Ejounal_WebApp\Ejounal_WebApp.csproj", "{BE32A823-9FEB-4BDB-89F9-409F0D5F0231}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejounal_WebApp", "Ejounal_WebApp\Ejounal_WebApp.csproj", "{BE32A823-9FEB-4BDB-89F9-409F0D5F0231}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

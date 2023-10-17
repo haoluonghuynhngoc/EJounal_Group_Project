@@ -2,7 +2,7 @@
 public class ReviewFields
 {
     public int UsersId { get; set; }
-    public Users Users { get; set; }
+    public virtual Users Users { get; set; }
     public int FieldsId { get; set; }
-    public Fields Fields { get; set; }
+    public virtual Fields Fields { get; set; }
 }

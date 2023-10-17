@@ -10,4 +10,10 @@ public class RoleRepositoryImpl : RepositoryBaseImpl<Role>, IRoleRepository
     {
         _context = context;
     }
+
+    public void AddAllRole(List<Role> role)
+    {
+        _context.AddRange(role);
+        _context.SaveChanges();
+    }
 }

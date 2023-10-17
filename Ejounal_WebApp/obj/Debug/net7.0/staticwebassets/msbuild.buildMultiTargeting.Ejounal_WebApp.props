@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Ejounal_WebApp.props" />
+</Project>

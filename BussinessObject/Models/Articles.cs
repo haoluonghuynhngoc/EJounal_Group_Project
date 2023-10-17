@@ -1,4 +1,6 @@
-﻿namespace BussinessObject.Models
+﻿using BussinessObject.Models.enums;
+
+namespace BussinessObject.Models
 {
     public class Articles
     {
@@ -6,7 +8,7 @@
         public DateTime CreateAt { get; set; }
         public DateTime UpdateAt { get; set; }
         public string Description { get; set; }
-        public string Status { get; set; }
+        public ArticleStatus Status { get; set; }
         public string SortDescription { get; set; }
         public string Title { get; set; }
         // Many To Many With User

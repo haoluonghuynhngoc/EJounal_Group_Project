@@ -1,14 +1,14 @@
 ﻿using BussinessObject.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+//using Microsoft.Extensions.Configuration;
 
 namespace BussinessObject.Data
 {
     public partial class ApplicationContext : DbContext
     {
-        public ApplicationContext()
-        {
-        }
+        //public ApplicationContext()
+        //{
+        //}
         public ApplicationContext(DbContextOptions options) : base(options)
         {
         }
@@ -29,22 +29,38 @@ namespace BussinessObject.Data
         public DbSet<ArticleFields> ArticleFields { get; set; }
         // end Join table
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer(GetConnectionString());
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //=> optionsBuilder.UseSqlServer(GetConnectionString());
 
-        private string GetConnectionString()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", true, true)
-            .Build();
-            var strConn = config["ConnectionStrings:EntityFramwork"];
+        // private string GetConnectionString()
+        // {
+        //     IConfiguration config = new ConfigurationBuilder()
+        //      .SetBasePath(Directory.GetCurrentDirectory())
+        //     .AddJsonFile("appsettings.json", true, true)
+        //     .Build();
+        //     var strConn = config["ConnectionStrings:EntityFramwork"];
 
-            return strConn;
-        }
+        //     return strConn;
+        // }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.Property(r => r.Name).HasConversion<string>();
+            });
+            modelBuilder.Entity<Users>(entity =>
+            {
+                entity.Property(s => s.Status).HasConversion<string>();
+            });
+            modelBuilder.Entity<Articles>(entity =>
+            {
+                entity.Property(s => s.Status).HasConversion<string>();
+            });
+            modelBuilder.Entity<Journals>(entity =>
+            {
+                entity.Property(j => j.Status).HasConversion<string>();
+            });
             modelBuilder.Entity<UsersRole>(entity =>
             {
                 entity.HasKey(ur => new { ur.RoleId, ur.UsersId });
