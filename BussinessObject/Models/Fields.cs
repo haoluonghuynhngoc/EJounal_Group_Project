@@ -6,5 +6,5 @@ public class Fields
     // Many To Many With Article
     public virtual ICollection<ArticleFields> ArticleFields { get; set; }
     // Many To Many With User
-    public virtual ICollection<Users> Users { get; set; }
+    public virtual ICollection<ReviewFields> ReviewFields { get; set; }
 }
