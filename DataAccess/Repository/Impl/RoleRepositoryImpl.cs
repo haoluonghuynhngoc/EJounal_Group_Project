@@ -13,7 +13,7 @@ public class RoleRepositoryImpl : RepositoryBaseImpl<Role>, IRoleRepository
 
     public void AddAllRole(List<Role> role)
     {
-        _context.AddRange(role);
+        _context.Roles.AddRange(role);
         _context.SaveChanges();
     }
 }

@@ -10,4 +10,10 @@ public class UserRepositoryImpl : RepositoryBaseImpl<Users>, IUserRepository
     {
         _context = context;
     }
+
+    public Users? FindByUsernameOrEmailAndPassword(string username, string password)
+    {
+        return _context.Users.FirstOrDefault(user =>
+        (user.Username == username || user.Email == username) && user.Password == password);
+    }
 }

@@ -9,7 +9,7 @@ namespace BussinessObject.Models
         public DateTime UpdateAt { get; set; }
         public string Name { get; set; }
         public string SortDescription { get; set; }
-        public JournalStatus Status { get; set; }
+        public JournalStatus? Status { get; set; }
         // One To Many With Article
         public virtual ICollection<Articles> Articles { get; set; }
     }

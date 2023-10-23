@@ -5,20 +5,20 @@ using DataAccess.Repository;
 namespace DataAccess.Data;
 public class SeedDataRole
 {
-    private readonly IRoleRepository roleRepository;
+    private readonly IRoleRepository _roleRepository;
 
     public SeedDataRole(IRoleRepository roleRepository)
     {
-        this.roleRepository = roleRepository;
+        this._roleRepository = roleRepository;
     }
 
     public void Initialize()
     {
-        if (roleRepository.GetAll().Any())
+        if (_roleRepository.GetAll().Any())
         {
             return;
         }
-        roleRepository.AddAllRole(new List<Role> { new Role { Name = RoleName.ADMIN }
+        _roleRepository.AddAllRole(new List<Role> { new Role { Name = RoleName.ADMIN }
                                                  , new Role { Name = RoleName.GUEST }
                                                  , new Role { Name = RoleName.AUTHOR }
                                                  , new Role { Name = RoleName.REVIEWER }

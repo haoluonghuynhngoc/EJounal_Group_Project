@@ -10,4 +10,10 @@ public class MajorRepositoryImpl : RepositoryBaseImpl<Majors>, IMajorRepository
     {
         _context = context;
     }
+
+    public void AddAllMajor(List<Majors> majors)
+    {
+        _context.Majors.AddRange(majors);
+        _context.SaveChanges();
+    }
 }

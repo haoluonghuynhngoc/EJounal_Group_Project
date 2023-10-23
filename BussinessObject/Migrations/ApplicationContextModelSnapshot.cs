@@ -70,6 +70,10 @@ namespace BussinessObject.Migrations
                     b.Property<DateTime>("UpdateAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("images")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("JournalsId");
@@ -174,10 +178,10 @@ namespace BussinessObject.Migrations
 
             modelBuilder.Entity("BussinessObject.Models.ReviewResult", b =>
                 {
-                    b.Property<int>("ArticlesId")
+                    b.Property<int>("UsersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
+                    b.Property<int>("ArticlesId")
                         .HasColumnType("int");
 
                     b.Property<string>("Comment")
@@ -187,12 +191,13 @@ namespace BussinessObject.Migrations
                     b.Property<DateTime>("ReviewDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ArticlesId", "UsersId");
+                    b.HasKey("UsersId", "ArticlesId");
 
-                    b.HasIndex("UsersId");
+                    b.HasIndex("ArticlesId");
 
                     b.ToTable("ReviewResults");
                 });
@@ -219,13 +224,10 @@ namespace BussinessObject.Migrations
                     b.Property<int>("UsersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("MajorId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MajorsId")
                         .HasColumnType("int");
 
-                    b.HasKey("UsersId", "MajorId");
+                    b.HasKey("UsersId", "MajorsId");
 
                     b.HasIndex("MajorsId");
 

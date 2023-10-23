@@ -10,4 +10,10 @@ public class FieldsRepositoryImpl : RepositoryBaseImpl<Fields>, IFieldsRepositor
     {
         _context = context;
     }
+
+    public void AddAllFields(List<Fields> fields)
+    {
+        _context.Fields.AddRange(fields);
+        _context.SaveChanges();
+    }
 }

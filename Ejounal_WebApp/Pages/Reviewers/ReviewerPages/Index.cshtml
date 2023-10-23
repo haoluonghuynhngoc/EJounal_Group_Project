@@ -1,0 +1,71 @@
+﻿@page
+@model Ejounal_WebApp.Pages.Reviewers.ReviewerPages.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Wellcome User @Html.DisplayFor(model=> model.Users.Username) </h1>
+
+<div>
+    <h4>Users</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Username)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Username)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Address)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Avatar)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Avatar)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.BirthDay)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.BirthDay)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Lastname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.Lastname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.PhoneNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Users.PhoneNumber)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Users?.Id">Edit</a> |
+    <a asp-page="../ArticlesAuthor/Index">Article management</a>
+</div>

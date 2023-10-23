@@ -3690,11 +3690,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj",
+      "projectPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\haolu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\DataAccess\\obj\\",
+      "outputPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\haolu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3711,8 +3711,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj": {
-              "projectPath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj"
+            "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj": {
+              "projectPath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj"
             }
           }
         }

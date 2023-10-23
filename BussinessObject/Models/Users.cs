@@ -15,15 +15,15 @@ namespace BussinessObject.Models
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string Lastname { get; set; }
-        public string Password { get; set; }
+        public string? Password { get; set; }
         public string PhoneNumber { get; set; }
         // Many To Many With Role
-        public virtual ICollection<UsersRole> UsersRoles { get; set; }
+        public virtual ICollection<UsersRole>? UsersRoles { get; set; }
         // Many To Many With Major
-        public virtual ICollection<UserMajors> UserMajors { get; set; }
+        public virtual ICollection<UserMajors>? UserMajors { get; set; }
         // Many To Many With Article
-        public virtual ICollection<ReviewResult> ReviewResults { get; set; }
+        public virtual ICollection<ReviewResult>? ReviewResults { get; set; }
         // Many To Many With Article
-        public virtual ICollection<Contributors> Contributors { get; set; }
+        public virtual ICollection<Contributors>? Contributors { get; set; }
     }
 }

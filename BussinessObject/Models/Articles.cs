@@ -9,16 +9,17 @@ namespace BussinessObject.Models
         public DateTime UpdateAt { get; set; }
         public string Description { get; set; }
         public ArticleStatus Status { get; set; }
+        public string Images { get; set; }
         public string SortDescription { get; set; }
         public string Title { get; set; }
         // Many To Many With User
-        public virtual ICollection<ReviewResult> ReviewResults { get; set; }
+        public virtual ICollection<ReviewResult>? ReviewResults { get; set; }
         // Many To Many With Fields
-        public virtual ICollection<ArticleFields> ArticleFields { get; set; }
+        public virtual ICollection<ArticleFields>? ArticleFields { get; set; }
         // Many To One With Jounal
         public int JournalsId { get; set; }
         public virtual Journals? Journals { get; set; }
         // Many To Many With User
-        public virtual ICollection<Contributors> Contributors { get; set; }
+        public virtual ICollection<Contributors>? Contributors { get; set; }
     }
 }

@@ -10,4 +10,10 @@ public class JournalRepositoryImpl : RepositoryBaseImpl<Journals>, IJournalRepos
     {
         _context = context;
     }
+
+    public void AddAllJournals(List<Journals> journals)
+    {
+        _context.Journals.AddRange(journals);
+        _context.SaveChanges();
+    }
 }

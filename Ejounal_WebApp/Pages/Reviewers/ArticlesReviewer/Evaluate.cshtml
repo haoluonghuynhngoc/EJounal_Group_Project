@@ -1,0 +1,57 @@
+﻿@page
+@model Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer.EvaluateModel
+@{
+    ViewData["Title"] = "Evaluate";
+}
+
+<h1>Create</h1>
+
+<h4>ReviewResult</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Articles.Id" />
+            @*             <div class="form-group">
+            <label asp-for="ReviewResult.UsersId" class="control-label"></label>
+            <select asp-for="ReviewResult.UsersId" class="form-control" asp-items="ViewBag.UsersId"></select>
+            </div>
+            <div class="form-group">
+            <label asp-for="ReviewResult.ArticlesId" class="control-label"></label>
+            <select asp-for="ReviewResult.ArticlesId" class="form-control" asp-items="ViewBag.ArticlesId"></select>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="ReviewResult.Comment" class="control-label"></label>
+                <input asp-for="ReviewResult.Comment" class="form-control" />
+                <span asp-validation-for="ReviewResult.Comment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReviewResult.Status" class="control-label"></label>
+                <select asp-for="ReviewResult.Status" class="form-control">
+                    <option value="VALID">Valid</option>
+                    <option value="INVALID">Invalid</option>
+                </select>
+                <span asp-validation-for="ReviewResult.Status" class="text-danger"></span>
+            </div>
+            @*             <div class="form-group">
+            <label asp-for="ReviewResult.ReviewDate" class="control-label"></label>
+            <input asp-for="ReviewResult.ReviewDate" class="form-control" />
+            <span asp-validation-for="ReviewResult.ReviewDate" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

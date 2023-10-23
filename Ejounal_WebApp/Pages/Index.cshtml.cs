@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Ejounal_WebApp.Pages;
 public class IndexModel : PageModel
@@ -15,4 +14,8 @@ public class IndexModel : PageModel
     {
 
     }
+    //public IActionResult OnGet()
+    //{
+    //    return RedirectToPage("/Shoes/Index");
+    //}
 }

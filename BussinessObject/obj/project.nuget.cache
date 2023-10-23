@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4Bu2o/GW2+d7ScdNyKt4wLmaGuj7RhF6a37Zaa2KoGnHbAn5HYzXGM4BlqRUffEIllBj4okDI+2XMQKFBhVisA==",
+  "dgSpecHash": "7O4D6cIb8xgbJpYtsyz680ejOMfXGTagN4sBZVfNqDjOk7vbrgtCgM9nL0Z1rCFnWfb/shfG0idUY9TrgB4lfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\haolu\\Downloads\\New folder\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj",
+  "projectFilePath": "D:\\Ky_7\\PRN221\\Group_Project\\EJounal_Group_Project\\BussinessObject\\BussinessObject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\haolu\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\haolu\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
