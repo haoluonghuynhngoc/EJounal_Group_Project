@@ -4,23 +4,58 @@
     ViewData["Title"] = "Evaluate";
 }
 
-<h1>Create</h1>
-
 <h4>ReviewResult</h4>
 <hr />
 <div class="row">
+    <div>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Articles.Title)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Articles.Title)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Articles.SortDescription)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Articles.SortDescription)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Articles.Images)
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Model.Articles.Images" alt="Avatar" width="80" height="80" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Articles.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Articles.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Articles.Status)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Articles.Status)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Articles.Journals)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Articles.Journals.Name)
+            </dd>
+        </dl>
+    </div>
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Articles.Id" />
-            @*             <div class="form-group">
-            <label asp-for="ReviewResult.UsersId" class="control-label"></label>
-            <select asp-for="ReviewResult.UsersId" class="form-control" asp-items="ViewBag.UsersId"></select>
-            </div>
-            <div class="form-group">
-            <label asp-for="ReviewResult.ArticlesId" class="control-label"></label>
-            <select asp-for="ReviewResult.ArticlesId" class="form-control" asp-items="ViewBag.ArticlesId"></select>
-            </div> *@
+            <input type="hidden" asp-for="Articles.Title" />
+            <input type="hidden" asp-for="Articles.Images" />
+            <input type="hidden" asp-for="Articles.Description" />
+            <input type="hidden" asp-for="Articles.SortDescription" />
             <div class="form-group">
                 <label asp-for="ReviewResult.Comment" class="control-label"></label>
                 <input asp-for="ReviewResult.Comment" class="form-control" />
@@ -34,11 +69,7 @@
                 </select>
                 <span asp-validation-for="ReviewResult.Status" class="text-danger"></span>
             </div>
-            @*             <div class="form-group">
-            <label asp-for="ReviewResult.ReviewDate" class="control-label"></label>
-            <input asp-for="ReviewResult.ReviewDate" class="form-control" />
-            <span asp-validation-for="ReviewResult.ReviewDate" class="text-danger"></span>
-            </div> *@
+            @Html.ValidationMessage("Error")
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

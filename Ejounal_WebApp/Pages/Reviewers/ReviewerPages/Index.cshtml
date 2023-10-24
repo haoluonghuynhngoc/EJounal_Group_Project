@@ -6,7 +6,7 @@
 <h1>Wellcome User @Html.DisplayFor(model=> model.Users.Username) </h1>
 
 <div>
-    <h4>Users</h4>
+
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -25,7 +25,7 @@
             @Html.DisplayNameFor(model => model.Users.Avatar)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.Avatar)
+            <img src="@Model.Users.Avatar" alt="Avatar" width="80" height="80" />
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Users.BirthDay)
@@ -67,5 +67,5 @@
 </div>
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Users?.Id">Edit</a> |
-    <a asp-page="../ArticlesAuthor/Index">Article management</a>
+    <a asp-page="../ArticlesReviewer/Index">Article management</a>
 </div>

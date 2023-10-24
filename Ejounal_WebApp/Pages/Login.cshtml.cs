@@ -1,6 +1,7 @@
 using BussinessObject.AccountView;
 using BussinessObject.Models.enums;
 using DataAccess.Repository;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -8,6 +9,9 @@ namespace Ejounal_WebApp.Pages
 {
     public class LoginModel : PageModel
     {
+        const string KEY_SESSION_ADMIN = "ADMIN";
+        const string KEY_SESSION_AUTHOR = "AUTHOR";
+        const string KEY_SESSION_REVIEWER = "REVIEWER";
         private readonly IUserRepository _userRepository;
 
         public LoginModel(IUserRepository userRepository)
@@ -39,31 +43,63 @@ namespace Ejounal_WebApp.Pages
             if (account == null)
             {
                 ModelState.AddModelError("LoginAV.UserName", "Username or password not correct");
+                return Page();
             }
             else if (account.Status == UserStatus.INACTIVE)
             {
                 ModelState.AddModelError("LoginAV.UserName", "Your account has been banned");
+                return Page();
             }
             else
             {
-                foreach (var x in account.UsersRoles)
-                {
 
-                    Console.WriteLine(x.Role.Name == RoleName.ADMIN);
+                if (_userRepository.CheckRoleAndUser(account, RoleName.ADMIN))
+                {
+                    var adminAccount = account.UsersRoles.FirstOrDefault(z => z.Role.Name == RoleName.ADMIN);
+                    if (adminAccount != null)
+                    {
+                        RemoveSession(KEY_SESSION_REVIEWER);
+                        RemoveSession(KEY_SESSION_AUTHOR);
+                        //HttpContext.Session.SetO
+                        HttpContext.Session.Set<SessionAuthor>(KEY_SESSION_ADMIN, new SessionAuthor()
+                        {
+                            UserId = adminAccount.UsersId,
+                            UserName = adminAccount.Users.Username,
+                            RoleName = RoleName.ADMIN
+                        });
+                    }
+                }
+                else if (_userRepository.CheckRoleAndUser(account, RoleName.AUTHOR))
+                {
+                    var authorAccount = account.UsersRoles.FirstOrDefault(z => z.Role.Name == RoleName.AUTHOR);
+                    if (authorAccount != null)
+                    {
+                        RemoveSession(KEY_SESSION_REVIEWER);
+                        RemoveSession(KEY_SESSION_ADMIN);
+                        HttpContext.Session.Set<SessionAuthor>(KEY_SESSION_AUTHOR, new SessionAuthor()
+                        {
+                            UserId = authorAccount.UsersId,
+                            UserName = authorAccount.Users.Username,
+                            RoleName = RoleName.AUTHOR
+                        });
+                    }
+                }
+                else if (_userRepository.CheckRoleAndUser(account, RoleName.REVIEWER))
+                {
+                    var reviewerAccount = account.UsersRoles.FirstOrDefault(z => z.Role.Name == RoleName.REVIEWER);
+                    if (reviewerAccount != null)
+                    {
+                        RemoveSession(KEY_SESSION_ADMIN);
+                        RemoveSession(KEY_SESSION_AUTHOR);
+                        HttpContext.Session.Set<SessionAuthor>(KEY_SESSION_REVIEWER, new SessionAuthor()
+                        {
+                            UserId = reviewerAccount.UsersId,
+                            UserName = reviewerAccount.Users.Username,
+                            RoleName = RoleName.REVIEWER
+                        });
+                    }
                 }
             }
-            //else if (account.UsersRoles. != "ADMIN")
-            //{
-            //    ModelState.AddModelError("LoginAV.UserName", "Your account does not have permission to login");
-            //}
-            //else
-            //{
-            //    HttpContext.Session.SetString(Constrains.SessionAttribute.AUTH_USER_ROLE, account.Role);
-            //    HttpContext.Session.SetString("accountId", account.AccountId.ToString());
-            //    HttpContext.Session.SetInt32("accountIdInt", account.AccountId);
-            //    HttpContext.Session.SetString(Constrains.SessionAttribute.AUTH_USER_NAME, account.Username);
-            //    HttpContext.Session.SetString(Constrains.SessionAttribute.AUTH_USER_FIRST_NAME, account.FirstName);
-            //}
             if (ModelState.IsValid)
             {
                 return RedirectToPage("./Index");
@@ -74,5 +110,13 @@ namespace Ejounal_WebApp.Pages
             }
 
         }
+        public void RemoveSession(string sessionKey)
+        {
+            if (HttpContext.Session.TryGetValue(sessionKey, out _))
+            {
+                HttpContext.Session.Remove(sessionKey);
+            }
+        }
     }
+
 }

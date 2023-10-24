@@ -2,3 +2,27 @@
 @model Ejounal_WebApp.Pages.RegisterModel
 @{
 }
+<div>
+    <h1 class="text-center">Register</h1>
+    <form class="w-25 m-auto" method="post">
+        <label asp-for="RegisterAV.Username" class="form-label fw-bold"></label>
+        <input asp-for="RegisterAV.Username" class="form-control" />
+        <span class="text-danger" asp-validation-for="RegisterAV.Username"></span><br />
+        <label asp-for="RegisterAV.Email" class="form-label fw-bold"></label>
+        <input asp-for="RegisterAV.Email" class="form-control" />
+        <span class="text-danger" asp-validation-for="RegisterAV.Email"></span><br />
+        <label asp-for="RegisterAV.FirstName" class="form-label fw-bold"></label>
+        <input asp-for="RegisterAV.FirstName" class="form-control" />
+        <span class="text-danger" asp-validation-for="RegisterAV.FirstName"></span><br />
+        <label asp-for="RegisterAV.LastName" class="form-label fw-bold"></label>
+        <input asp-for="RegisterAV.LastName" class="form-control" />
+        <span class="text-danger" asp-validation-for="RegisterAV.LastName"></span><br />
+        <label asp-for="RegisterAV.Password" class="form-label fw-bold"></label>
+        <input asp-for="RegisterAV.Password" class="form-control" />
+        <span class="text-danger" asp-validation-for="RegisterAV.Password"></span><br />
+        <label asp-for="RegisterAV.ConfirmPassword" class="form-label fw-bold"></label>
+        <input asp-for="RegisterAV.ConfirmPassword" class="form-control" />
+        <span class="text-danger" asp-validation-for="RegisterAV.ConfirmPassword"></span><br />
+        <input type="submit" class="btn btn-primary border-dark bg-black w-100" value="Register" />
+    </form>
+</div>

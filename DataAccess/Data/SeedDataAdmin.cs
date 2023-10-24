@@ -30,7 +30,7 @@ public class SeedDataAdmin
                 CreateAt = DateTime.Now,
                 UpdateAt = DateTime.Now,
                 BirthDay = new DateTime(2009, 09, 09),
-                Status = UserStatus.INACTIVE,
+                Status = UserStatus.ACTIVE,
                 Email = "Haoluong@gmail.com",
                 FirstName = "A",
                 Lastname = "Nguyen Van",

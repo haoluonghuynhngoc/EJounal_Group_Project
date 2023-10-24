@@ -40,6 +40,7 @@ namespace Ejounal_WebApp.Pages.Admins.UserPages
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
+            // khong duoc xoa admin
             if (id == null)
             {
                 return NotFound();

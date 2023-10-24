@@ -41,7 +41,7 @@ namespace Ejounal_WebApp.Pages.Authors.ArticlesAuthor
             ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
             return Page();
         }
-
+        // thieu neu dua len roi thi khong the sua
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

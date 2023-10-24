@@ -1,5 +1,7 @@
 using BussinessObject.Models;
+using BussinessObject.Models.enums;
 using DataAccess.Repository;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,7 +9,7 @@ namespace Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer
 {
     public class EvaluateModel : PageModel
     {
-
+        const string KEY_SESSION_REVIEWER = "REVIEWER";
         private readonly IArticlesRepository _articlesRepository;
         private readonly IUserRepository _userRepository;
         private readonly IReviewResultRepository _reviewResultRepository;
@@ -45,17 +47,47 @@ namespace Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer
 
         public async Task<IActionResult> OnPostAsync()
         {
-            // lay session User
             if (!ModelState.IsValid)
             {
                 return Page();
             }
             ReviewResult.Articles = _articlesRepository.GetById(Articles.Id);
-            ReviewResult.Users = _userRepository.GetById(1); //set lai session
+            var sessionReviewer = (SessionAuthor)HttpContext.Session.Get<SessionAuthor>(KEY_SESSION_REVIEWER);
+            if (sessionReviewer != null)
+            {
+                ReviewResult.Users = _userRepository.GetById(sessionReviewer.UserId);
+            }
             ReviewResult.ReviewDate = DateTime.Now;
-            _reviewResultRepository.AddReviewResult(ReviewResult);
+            try
+            {
+                _reviewResultRepository.AddReviewResult(ReviewResult);
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("Error", "You have already rated this article");
+                return Page();
+            }
 
-            // check o day
+            // co 5 result thi chap nhan
+            if (_reviewResultRepository.GetAll()
+                                       .Where(rr => rr.ArticlesId == Articles.Id)
+                                       .Count(rr => rr.Status == ReviewResultStatus.VALID) >= 5)
+            {
+                var tmpArticle = _articlesRepository.GetById(Articles.Id);
+                if (tmpArticle != null)
+                {
+                    tmpArticle.Status = ArticleStatus.APPROVED;
+                    _articlesRepository.Update(tmpArticle);
+                }
+            }
+            else if (_reviewResultRepository.GetAll()
+                                            .Where(rr => rr.ArticlesId == Articles.Id)
+                                            .Count(rr => rr.Status == ReviewResultStatus.INVALID) >= 5)
+            {
+                // chua test lai : neu chua update thi lam giong o tren
+                _articlesRepository.GetById(Articles.Id).Status = ArticleStatus.REJECTED;
+            }
+
             return RedirectToPage("./Index");
         }
     }

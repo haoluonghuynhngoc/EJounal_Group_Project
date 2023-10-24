@@ -10,4 +10,9 @@ public class ArticlesRepositoryImpl : RepositoryBaseImpl<Articles>, IArticlesRep
     {
         _context = context;
     }
+
+    public bool FindArticleTitle(string title)
+    {
+        return _context.Articles.Any(a => a.Title == title);
+    }
 }

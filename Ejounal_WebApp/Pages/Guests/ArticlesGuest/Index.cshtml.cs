@@ -6,6 +6,9 @@ namespace Ejounal_WebApp.Pages.Guests.ArticlesGuest
 {
     public class IndexModel : PageModel
     {
+        //public PaginatedList<Articles> Article { get; set; }
+        //public string CurrentSearchString { get; set; }
+
         private readonly IArticlesRepository _articlesRepository;
 
         public IndexModel(IArticlesRepository articlesRepository)

@@ -13,12 +13,9 @@ namespace Ejounal_WebApp.Pages
             if (confirm == "yes")
             {
                 HttpContext.Session.Clear();
-                return RedirectToPage("./Index");
+
             }
-            else
-            {
-                return Page();
-            }
+            return RedirectToPage("./Index");
         }
     }
 }

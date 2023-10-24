@@ -1,6 +1,7 @@
 ﻿using BussinessObject.Models;
 using BussinessObject.Models.enums;
 using DataAccess.Repository;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ namespace Ejounal_WebApp.Pages.Admins.ArticlePages
 {
     public class CreateModel : PageModel
     {
+        const string KEY_SESSION_ADMIN = "ADMIN";
         private readonly IArticlesRepository _articlesRepository;
         private readonly IJournalRepository _journalRepository;
         private readonly IFieldsRepository _fieldsRepository;
@@ -40,15 +42,27 @@ namespace Ejounal_WebApp.Pages.Admins.ArticlePages
             {
                 return Page();
             }
+            if (_articlesRepository.FindArticleTitle(Articles.Title))
+            {
+                ModelState.AddModelError("Articles.Title", "You have already title this article");
+                ViewData["FiedsId"] = new SelectList(_fieldsRepository.GetAll(), "Id", "Name");
+                ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
+                return Page();
+            }
+
             var tmpFile = _fieldsRepository.GetById(Fields.Id);
             if (tmpFile != null)
             {
                 Articles.ArticleFields = new List<ArticleFields> { new ArticleFields { Fields = tmpFile } };
             }
-            var tmpUser = _userRepository.GetById(1); // lay session
-            if (tmpUser != null)
+            var sessionAdmin = (SessionAuthor)HttpContext.Session.Get<SessionAuthor>(KEY_SESSION_ADMIN);
+            if (sessionAdmin != null)
             {
-                Articles.Contributors = new List<Contributors> { new Contributors { Users = tmpUser } };
+                var tmpUser = _userRepository.GetById(sessionAdmin.UserId);
+                if (tmpUser != null)
+                {
+                    Articles.Contributors = new List<Contributors> { new Contributors { Users = tmpUser } };
+                }
             }
             Articles.CreateAt = DateTime.Now;
             Articles.UpdateAt = DateTime.Now;

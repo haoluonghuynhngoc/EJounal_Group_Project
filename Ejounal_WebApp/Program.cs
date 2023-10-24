@@ -69,6 +69,9 @@ using (var scope = app.Services.CreateScope())
 
 }
 
+// config session
+app.UseSession();
+
 app.UseStaticFiles();
 
 app.UseHttpsRedirection();

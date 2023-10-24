@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Ejounal_WebApp.Utils;
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Ejounal_WebApp.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/2ee129af2d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -19,12 +21,24 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
+                        @if (Context.Session.Get<SessionAuthor>("ADMIN") != null ||
+                        Context.Session.Get<SessionAuthor>("AUTHOR") != null ||
+                        Context.Session.Get<SessionAuthor>("REVIEWER") != null
+                        )
+                        {
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Logout"><i class="fa-solid fas fa-user-times"></i> Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item  ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Login"><i class="fa-solid fas fa-user-check"></i> Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Register"><i class="fa-solid fas fa-user-plus"></i> Register</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
