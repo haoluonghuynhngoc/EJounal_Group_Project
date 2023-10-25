@@ -60,6 +60,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXFVzZXJQYWdlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Authors/ArticleRating/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xBcnRpY2xlUmF0aW5nXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Authors/ArticleRating/Evaluate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xBcnRpY2xlUmF0aW5nXEV2YWx1YXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Authors/ArticleRating/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xBcnRpY2xlUmF0aW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Authors/ArticlesAuthor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yc1xBcnRpY2xlc0F1dGhvclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,6 +132,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/RegisterAuthor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJBdXRob3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Reviewers/ArticlesReviewer/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3ZXJzXEFydGljbGVzUmV2aWV3ZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -138,26 +154,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Reviewers/ReviewerPages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3ZXJzXFJldmlld2VyUGFnZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Reviewers/Test/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3ZXJzXFRlc3RcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Reviewers/Test/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3ZXJzXFRlc3RcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Reviewers/Test/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3ZXJzXFRlc3RcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Reviewers/Test/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3ZXJzXFRlc3RcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Reviewers/Test/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmV2aWV3ZXJzXFRlc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]

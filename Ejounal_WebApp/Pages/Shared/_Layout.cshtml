@@ -21,11 +21,47 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @if (Context.Session.Get<SessionAuthor>("ADMIN") != null ||
-                        Context.Session.Get<SessionAuthor>("AUTHOR") != null ||
-                        Context.Session.Get<SessionAuthor>("REVIEWER") != null
-                        )
+                        @if (Context.Session.Get<SessionAuthor>("ADMIN") != null)
                         {
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Admins/ArticlePages/Index"><i class="fa-solid fas fa-book"></i> Article Management</a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Admins/ArticleResults/Index"><i class="fa-solid fas fa-edit"></i> ArticleResult Management</a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Admins/UserPages/Index"><i class="fa-solid fas fa-address-card"></i> Users Management</a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Logout"><i class="fa-solid fas fa-user-times"></i> Logout</a>
+                            </li>
+                        }
+                        else if (Context.Session.Get<SessionAuthor>("AUTHOR") != null)
+                        {
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Authors/ArticlesAuthor/Index"><i class="fa-solid fas fa-book"></i> Article Management </a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Reviewers/ArticlesReviewer/Index"><i class="fa-solid fas fa-book-reader"></i> Article View</a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Authors/AuthorPages/Index"><i class="fa-solid far fa-address-card"></i> Author Information </a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Logout"><i class="fa-solid fas fa-user-times"></i> Logout</a>
+                            </li>
+                        }
+                        else if (Context.Session.Get<SessionAuthor>("REVIEWER") != null)
+                        {
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Reviewers/ArticlesReviewer/Index"><i class="fa-solid fas fa-book-reader"></i> Article View</a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Reviewers/ReviewerPages/Index"><i class="fa-solid far fa-address-card"></i> My Information</a>
+                            </li>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/RegisterAuthor"><i class="fa-solid fas fa-user - edit"></i> Register Author</a>
+                            </li>
                             <li class="nav-item ms-auto">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Logout"><i class="fa-solid fas fa-user-times"></i> Logout</a>
                             </li>

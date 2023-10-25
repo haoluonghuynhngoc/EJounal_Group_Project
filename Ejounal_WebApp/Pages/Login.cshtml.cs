@@ -60,13 +60,13 @@ namespace Ejounal_WebApp.Pages
                     {
                         RemoveSession(KEY_SESSION_REVIEWER);
                         RemoveSession(KEY_SESSION_AUTHOR);
-                        //HttpContext.Session.SetO
                         HttpContext.Session.Set<SessionAuthor>(KEY_SESSION_ADMIN, new SessionAuthor()
                         {
                             UserId = adminAccount.UsersId,
                             UserName = adminAccount.Users.Username,
                             RoleName = RoleName.ADMIN
                         });
+                        return RedirectToPage("./Admins/ArticlePages/Index");
                     }
                 }
                 else if (_userRepository.CheckRoleAndUser(account, RoleName.AUTHOR))
@@ -82,6 +82,7 @@ namespace Ejounal_WebApp.Pages
                             UserName = authorAccount.Users.Username,
                             RoleName = RoleName.AUTHOR
                         });
+                        return RedirectToPage("./Authors/ArticlesAuthor/Index");
                     }
                 }
                 else if (_userRepository.CheckRoleAndUser(account, RoleName.REVIEWER))
@@ -97,6 +98,7 @@ namespace Ejounal_WebApp.Pages
                             UserName = reviewerAccount.Users.Username,
                             RoleName = RoleName.REVIEWER
                         });
+                        return RedirectToPage("./Reviewers/ArticlesReviewer/Index");
                     }
                 }
             }

@@ -71,20 +71,18 @@
         }
     </tbody>
 </table>
-@* @{
-    var prevDisabled = !Model.Shoe.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.Shoe.HasNextPage ? "disabled" : "";
+@{
+    var prevDisabled = !Model.Articles.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Articles.HasNextPage ? "disabled" : "";
 }
 
 <a asp-page="index"
-   asp-route-PageIndex="@(Model.Shoe.PageIndex - 1)"
-   asp-route-SearchString="@Model.CurrentSearchString"
+   asp-route-PageIndex="@(Model.Articles.PageIndex - 1)"
    class="btn btn-primary bg-black border-dark @prevDisabled">
     Previous
 </a>
 <a asp-page="index"
-   asp-route-PageIndex="@(Model.Shoe.PageIndex + 1)"
-   asp-route-SearchString="@Model.CurrentSearchString"
+   asp-route-PageIndex="@(Model.Articles.PageIndex + 1)"
    class="btn btn-primary border-dark bg-black @nextDisabled">
     Next
-</a> *@
+</a>

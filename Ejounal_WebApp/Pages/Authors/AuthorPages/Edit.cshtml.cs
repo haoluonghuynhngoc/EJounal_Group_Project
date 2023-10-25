@@ -37,6 +37,11 @@ namespace Ejounal_WebApp.Pages.Authors.AuthorPages
             {
                 return Page();
             }
+            if (_userRepository.GetAll().Any(u => u.Id != Users.Id && u.Email == Users.Email))
+            {
+                ModelState.AddModelError("Users.Email", "Email already exist");
+                return Page();
+            }
             var users = _userRepository.GetById(Users.Id);
             if (users != null)
             {

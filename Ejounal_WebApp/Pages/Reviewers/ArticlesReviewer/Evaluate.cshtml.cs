@@ -73,19 +73,23 @@ namespace Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer
                                        .Where(rr => rr.ArticlesId == Articles.Id)
                                        .Count(rr => rr.Status == ReviewResultStatus.VALID) >= 5)
             {
-                var tmpArticle = _articlesRepository.GetById(Articles.Id);
-                if (tmpArticle != null)
+                var tmpArticleApproved = _articlesRepository.GetById(Articles.Id);
+                if (tmpArticleApproved != null)
                 {
-                    tmpArticle.Status = ArticleStatus.APPROVED;
-                    _articlesRepository.Update(tmpArticle);
+                    tmpArticleApproved.Status = ArticleStatus.APPROVED;
+                    _articlesRepository.Update(tmpArticleApproved);
                 }
             }
             else if (_reviewResultRepository.GetAll()
                                             .Where(rr => rr.ArticlesId == Articles.Id)
                                             .Count(rr => rr.Status == ReviewResultStatus.INVALID) >= 5)
             {
-                // chua test lai : neu chua update thi lam giong o tren
-                _articlesRepository.GetById(Articles.Id).Status = ArticleStatus.REJECTED;
+                var tmpArticleRejected = _articlesRepository.GetById(Articles.Id);
+                if (tmpArticleRejected != null)
+                {
+                    tmpArticleRejected.Status = ArticleStatus.REJECTED;
+                    _articlesRepository.Update(tmpArticleRejected);
+                }
             }
 
             return RedirectToPage("./Index");

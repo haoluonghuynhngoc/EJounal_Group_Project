@@ -1,4 +1,5 @@
 ﻿using BussinessObject.Models;
+using BussinessObject.Models.enums;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -17,7 +18,9 @@ namespace Ejounal_WebApp.Pages.Admins.UserPages
 
         public async Task OnGetAsync()
         {
-            Users = _userRepository.GetAll().ToList();
+            // Users = _userRepository.GetAll().ToList();
+            Users = _userRepository.GetAll().ToList()
+                .Where(u => u.UsersRoles.Any(a => a.Role.Name != RoleName.ADMIN)).ToList();
         }
     }
 }

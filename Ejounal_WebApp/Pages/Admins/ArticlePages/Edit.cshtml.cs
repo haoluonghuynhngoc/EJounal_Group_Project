@@ -44,8 +44,15 @@ namespace Ejounal_WebApp.Pages.Admins.ArticlePages
 
         public async Task<IActionResult> OnPostAsync()
         {
+            ViewData["FiedsId"] = new SelectList(_fieldsRepository.GetAll(), "Id", "Name");
+            ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
             if (!ModelState.IsValid)
             {
+                return Page();
+            }
+            if (_articlesRepository.FindArticleTitle(Articles.Title))
+            {
+                ModelState.AddModelError("Articles.Title", "Title already exist");
                 return Page();
             }
             var tmpArticle = _articlesRepository.GetById(Articles.Id);

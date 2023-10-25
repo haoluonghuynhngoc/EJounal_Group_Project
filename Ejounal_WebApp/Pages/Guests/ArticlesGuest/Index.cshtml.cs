@@ -1,13 +1,14 @@
 ﻿using BussinessObject.Models;
 using DataAccess.Repository;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ejounal_WebApp.Pages.Guests.ArticlesGuest
 {
     public class IndexModel : PageModel
     {
-        //public PaginatedList<Articles> Article { get; set; }
-        //public string CurrentSearchString { get; set; }
+        public PaginatedList<Articles> Articles { get; set; }
 
         private readonly IArticlesRepository _articlesRepository;
 
@@ -15,12 +16,18 @@ namespace Ejounal_WebApp.Pages.Guests.ArticlesGuest
         {
             _articlesRepository = articlesRepository;
         }
+        // get all khong phan trang
+        //public IList<Articles> Articles { get; set; } = default!;
 
-        public IList<Articles> Articles { get; set; } = default!;
-
-        public async Task OnGetAsync()
+        //public async Task OnGetAsync()
+        //{
+        //    Articles = _articlesRepository.GetAll().ToList();
+        //}
+        public async Task OnGetAsync(int? PageIndex)
         {
-            Articles = _articlesRepository.GetAll().ToList();
+            var PageSize = 3;
+            Articles = await PaginatedList<Articles>.CreateAsync(_articlesRepository.GetAll()
+                                                                 .AsQueryable().AsNoTracking(), PageIndex ?? 1, PageSize);
         }
     }
 }
