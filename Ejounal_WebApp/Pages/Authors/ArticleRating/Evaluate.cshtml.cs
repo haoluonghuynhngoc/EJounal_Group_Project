@@ -9,7 +9,7 @@ namespace Ejounal_WebApp.Pages.Authors.ArticleRating
 {
     public class EvaluateModel : PageModel
     {
-        const string KEY_SESSION_ADMIN = "ADMIN";
+        const string KEY_SESSION_AUTHOR = "AUTHOR";
         private readonly IArticlesRepository _articlesRepository;
         private readonly IUserRepository _userRepository;
         private readonly IReviewResultRepository _reviewResultRepository;
@@ -52,7 +52,7 @@ namespace Ejounal_WebApp.Pages.Authors.ArticleRating
                 return Page();
             }
             ReviewResult.Articles = _articlesRepository.GetById(Articles.Id);
-            var sessionReviewer = (SessionAuthor)HttpContext.Session.Get<SessionAuthor>(KEY_SESSION_ADMIN);
+            var sessionReviewer = (SessionAuthor)HttpContext.Session.Get<SessionAuthor>(KEY_SESSION_AUTHOR);
             if (sessionReviewer != null)
             {
                 ReviewResult.Users = _userRepository.GetById(sessionReviewer.UserId);
