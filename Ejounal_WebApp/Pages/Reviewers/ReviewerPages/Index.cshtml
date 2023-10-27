@@ -1,7 +1,13 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.Reviewers.ReviewerPages.IndexModel
+@using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums;
 @{
     ViewData["Title"] = "Index";
+    if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
+    {
+        Response.Redirect("../../Login");
+    }
 }
 <h1>Wellcome User @Html.DisplayFor(model=> model.Users.Username) </h1>
 

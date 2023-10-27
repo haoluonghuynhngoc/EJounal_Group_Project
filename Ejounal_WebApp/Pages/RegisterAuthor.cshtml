@@ -1,75 +1,85 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.RegisterAuthorModel
+@using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums;
 @{
     ViewData["Title"] = "RegisterAuthor";
-}
-<div>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.Username)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.Username)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.Address)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.Address)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.Avatar)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@Model.Users.Avatar" alt="avatar" width="80" height="80" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.BirthDay)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.BirthDay)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.Status)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.Status)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.Email)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.FirstName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.FirstName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.Lastname)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.Lastname)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Users.PhoneNumber)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Users.PhoneNumber)
-        </dd>
-    </dl>
-    @Html.ValidationMessage("Error")
-    <div class="col-md-6 offset-md-3 text-center">
-        <div class="card">
-            <div class="card-body">
-                <h2>Do you want to change author account ? </h2>
-                <form method="post">
-                    <button type="submit" name="confirm" value="yes" class="btn btn-success">Yes</button>
-                    <button type="submit" name="confirm" value="no" class="btn btn-danger">No</button>
-                </form>
+    if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName == RoleName.REVIEWER ||
+    HttpContext.Session.Get<SessionAuthor>("AUTHOR")?.RoleName == RoleName.AUTHOR)
+    {
+        <div>
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.Username)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.Username)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.Address)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.Address)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.Avatar)
+                </dt>
+                <dd class="col-sm-10">
+                    <img src="@Model.Users.Avatar" alt="avatar" width="80" height="80" />
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.BirthDay)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.BirthDay)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.Status)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.Status)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.Email)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.Email)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.FirstName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.FirstName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.Lastname)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.Lastname)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Users.PhoneNumber)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Users.PhoneNumber)
+                </dd>
+            </dl>
+            @Html.ValidationMessage("Error")
+            <div class="col-md-6 offset-md-3 text-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Do you want to change author account ? </h2>
+                        <form method="post">
+                            <button type="submit" name="confirm" value="yes" class="btn btn-success">Yes</button>
+                            <button type="submit" name="confirm" value="no" class="btn btn-danger">No</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    }
+    else
+    {
+        Response.Redirect("../../Login");
+    }
+}

@@ -1,8 +1,13 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.Authors.ArticlesAuthor.IndexModel
-
+@using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums;
 @{
     ViewData["Title"] = "Index";
+    if (HttpContext.Session.Get<SessionAuthor>("AUTHOR")?.RoleName != RoleName.AUTHOR)
+    {
+        Response.Redirect("../../Login");
+    }
 }
 
 <h1>Your article</h1>

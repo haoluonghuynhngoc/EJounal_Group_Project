@@ -1,10 +1,14 @@
 ﻿@page
+@using Ejounal_WebApp.Utils;
 @model Ejounal_WebApp.Pages.Admins.ArticlePages.IndexModel
-
+@using BussinessObject.Models.enums;
 @{
     ViewData["Title"] = "Index";
+    if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
+    {
+        Response.Redirect("../../Login");
+    }
 }
-
 <h1>Article Management</h1>
 
 <p>
@@ -78,3 +82,4 @@
         }
     </tbody>
 </table>
+
