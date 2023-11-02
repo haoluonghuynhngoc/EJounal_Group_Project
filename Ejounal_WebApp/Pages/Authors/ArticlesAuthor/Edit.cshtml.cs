@@ -1,4 +1,5 @@
 ﻿using BussinessObject.Models;
+using BussinessObject.Models.enums;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -48,15 +49,19 @@ namespace Ejounal_WebApp.Pages.Authors.ArticlesAuthor
             {
                 return Page();
             }
+            ViewData["FiedsId"] = new SelectList(_fieldsRepository.GetAll(), "Id", "Name");
+            ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
             var tmpArticle = _articlesRepository.GetById(Articles.Id);
-            // thieu neu dua len roi thi khong the sua
+
             if (tmpArticle != null)
             {
                 //tmpArticle.ArticleFields.Add
                 tmpArticle.Images = Articles.Images;
                 tmpArticle.Description = Articles.Description;
                 tmpArticle.Title = Articles.Title;
+                tmpArticle.Status = ArticleStatus.REVISED;
                 tmpArticle.SortDescription = Articles.SortDescription;
+                tmpArticle.ReviewResults = new List<ReviewResult>();
                 _articlesRepository.Update(tmpArticle);
             }
 

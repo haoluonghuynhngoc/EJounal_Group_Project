@@ -1,4 +1,5 @@
 ﻿using BussinessObject.Models;
+using BussinessObject.Models.enums;
 using DataAccess.Repository;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -17,7 +18,7 @@ namespace Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer
 
         public async Task OnGetAsync()
         {
-            Articles = _articlesRepository.GetAll().ToList();
+            Articles = _articlesRepository.GetAll().Where(a => a.Status == ArticleStatus.REVIEWING).ToList();
         }
     }
 }

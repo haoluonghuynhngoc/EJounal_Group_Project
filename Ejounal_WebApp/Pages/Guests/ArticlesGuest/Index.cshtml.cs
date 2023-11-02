@@ -1,8 +1,8 @@
 ﻿using BussinessObject.Models;
+using BussinessObject.Models.enums;
 using DataAccess.Repository;
 using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 
 namespace Ejounal_WebApp.Pages.Guests.ArticlesGuest
 {
@@ -27,7 +27,7 @@ namespace Ejounal_WebApp.Pages.Guests.ArticlesGuest
         {
             var PageSize = 3;
             Articles = await PaginatedList<Articles>.CreateAsync(_articlesRepository.GetAll()
-                                                                 .AsQueryable().AsNoTracking(), PageIndex ?? 1, PageSize);
+               .AsQueryable().Where(a => a.Status == ArticleStatus.APPROVED), PageIndex ?? 1, PageSize);
         }
     }
 }

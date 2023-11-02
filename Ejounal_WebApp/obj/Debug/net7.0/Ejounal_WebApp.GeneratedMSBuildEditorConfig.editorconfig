@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\Ejounal_WebApp
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Admins/ArticleAccept/AcceptArticles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXEFydGljbGVBY2NlcHRcQWNjZXB0QXJ0aWNsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Admins/ArticleAccept/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXEFydGljbGVBY2NlcHRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Ky_7/PRN221/Group_Project/EJounal_Group_Project/Ejounal_WebApp/Pages/Admins/ArticlePages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5zXEFydGljbGVQYWdlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

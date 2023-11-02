@@ -40,8 +40,9 @@ namespace Ejounal_WebApp.Pages.Authors.ArticlesAuthor
             {
                 return Page();
             }
-
-            // 24/10/2023 sua nhung chua test
+            ViewData["FiedsId"] = new SelectList(_fieldsRepository.GetAll(), "Id", "Name");
+            ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
+       
             if (_articlesRepository.FindArticleTitle(Articles.Title))
             {
                 ModelState.AddModelError("Articles.Title", "You have already title this article");
