@@ -3,5 +3,7 @@ public enum ArticleStatus
 {
     APPROVED,
     REJECTED,
+    REVISED,
+    REVIEWING,
     PENDING
 }

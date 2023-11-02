@@ -80,6 +80,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapControllers(); //here
+
 app.MapRazorPages();
 
 app.Run();

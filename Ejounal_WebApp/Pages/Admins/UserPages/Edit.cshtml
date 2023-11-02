@@ -8,6 +8,7 @@
     if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
     {
         Response.Redirect("../../Login");
+        return;
     }
 
 }

@@ -22,7 +22,7 @@ namespace Ejounal_WebApp.Pages.Guests.ArticlesGuest
         //public async Task OnGetAsync()
         //{
         //    Articles = _articlesRepository.GetAll().ToList();
-        //}
+        //} .Where(a => a.Status == ArticleStatus.APPROVED)
         public async Task OnGetAsync(int? PageIndex)
         {
             var PageSize = 3;

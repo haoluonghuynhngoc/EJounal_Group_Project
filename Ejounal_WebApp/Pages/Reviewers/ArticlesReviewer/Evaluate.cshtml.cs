@@ -69,8 +69,9 @@ namespace Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer
             }
 
             // co 5 result thi chap nhan
+            // sua o && rr.Articles.Status != ArticleStatus.APPROVED
             if (_reviewResultRepository.GetAll()
-                                       .Where(rr => rr.ArticlesId == Articles.Id)
+                                       .Where(rr => rr.ArticlesId == Articles.Id && rr.Articles.Status != ArticleStatus.APPROVED)
                                        .Count(rr => rr.Status == ReviewResultStatus.VALID) >= 5)
             {
                 var tmpArticleApproved = _articlesRepository.GetById(Articles.Id);
@@ -81,7 +82,7 @@ namespace Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer
                 }
             }
             else if (_reviewResultRepository.GetAll()
-                                            .Where(rr => rr.ArticlesId == Articles.Id)
+                                            .Where(rr => rr.ArticlesId == Articles.Id && rr.Articles.Status != ArticleStatus.APPROVED)
                                             .Count(rr => rr.Status == ReviewResultStatus.INVALID) >= 5)
             {
                 var tmpArticleRejected = _articlesRepository.GetById(Articles.Id);
