@@ -1,4 +1,5 @@
 ﻿using BussinessObject.Models.enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace BussinessObject.Models
 {
@@ -12,10 +13,12 @@ namespace BussinessObject.Models
         public DateTime UpdateAt { get; set; }
         public DateTime BirthDay { get; set; }
         public UserStatus Status { get; set; }
+        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", ErrorMessage = "Email is not in a valid format.")]
         public string Email { get; set; }
         public string FirstName { get; set; }
         public string Lastname { get; set; }
         public string? Password { get; set; }
+        [RegularExpression(@"^\d{10}$", ErrorMessage = "Telephone must be a 10-digit number.")]
         public string PhoneNumber { get; set; }
         // Many To Many With Role
         public virtual ICollection<UsersRole>? UsersRoles { get; set; }

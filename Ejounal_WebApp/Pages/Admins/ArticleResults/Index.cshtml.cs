@@ -1,34 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using BussinessObject.Models;
+using BussinessObject.Models.enums;
+using DataAccess.Repository;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using BussinessObject.Data;
-using BussinessObject.Models;
 
 namespace Ejounal_WebApp.Pages.Admins.ArticleResults
 {
     public class IndexModel : PageModel
     {
-        private readonly BussinessObject.Data.ApplicationContext _context;
+        private readonly IReviewResultRepository reviewResultRepository;
 
-        public IndexModel(BussinessObject.Data.ApplicationContext context)
+        public IndexModel(IReviewResultRepository reviewResultRepository)
         {
-            _context = context;
+            this.reviewResultRepository = reviewResultRepository;
         }
 
-        public IList<ReviewResult> ReviewResult { get;set; } = default!;
-
-        public async Task OnGetAsync()
+        public PaginatedList<ReviewResult> ReviewResult { get; set; } = default!;
+        public async Task OnGetAsync(int? PageIndex)
         {
-            if (_context.ReviewResults != null)
+            if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
             {
-                ReviewResult = await _context.ReviewResults
-                .Include(r => r.Articles)
-                .Include(r => r.Users).ToListAsync();
+                Response.Redirect("../../Login");
+                return;
             }
+            var PageSize = 10;
+            ReviewResult = await PaginatedList<ReviewResult>.CreateAsync(reviewResultRepository.GetAll()
+               .AsQueryable(), PageIndex ?? 1, PageSize);
         }
     }
 }

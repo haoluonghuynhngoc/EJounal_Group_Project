@@ -13,3 +13,18 @@ C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\BussinessObject\obj\De
 C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.pdb
 C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.genruntimeconfig.cache
 C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\ref\BussinessObject.dll
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\bin\Debug\net7.0\appsettings.json
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\bin\Debug\net7.0\BussinessObject.deps.json
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\bin\Debug\net7.0\BussinessObject.runtimeconfig.json
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\bin\Debug\net7.0\BussinessObject.dll
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\bin\Debug\net7.0\BussinessObject.pdb
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.csproj.AssemblyReference.cache
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.AssemblyInfoInputs.cache
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.AssemblyInfo.cs
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.csproj.CoreCompileInputs.cache
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.dll
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\refint\BussinessObject.dll
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.pdb
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\BussinessObject.genruntimeconfig.cache
+D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\BussinessObject\obj\Debug\net7.0\ref\BussinessObject.dll

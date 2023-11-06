@@ -28,6 +28,11 @@ namespace Ejounal_WebApp.Pages.Authors.ArticleRating
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (HttpContext.Session.Get<SessionAuthor>("AUTHOR")?.RoleName != RoleName.AUTHOR)
+            {
+                // Response.Redirect("../../Login");
+                return RedirectToPage("../../Login");
+            }
             if (id == null)
             {
                 return NotFound();

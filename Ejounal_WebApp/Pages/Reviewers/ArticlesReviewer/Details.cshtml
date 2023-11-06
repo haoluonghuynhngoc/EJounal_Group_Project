@@ -1,21 +1,20 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.Reviewers.ArticlesReviewer.DetailsModel
-@using Ejounal_WebApp.Utils;
-@using BussinessObject.Models.enums;
+@* @using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums; *@
 @{
     ViewData["Title"] = "Details";
-    if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
-    {
-        Response.Redirect("../../Login");
-        return;
-    }
+    // if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
+    // {
+    //     Response.Redirect("../../Login");
+    //     return;
+    // }
 }
 
-<h1>Details</h1>
-
+<h1>Details Articles</h1>
+</br>
 <div>
-    <h4>Articles</h4>
-    <hr />
+
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Articles.Title)
@@ -58,6 +57,5 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Articles?.Id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>

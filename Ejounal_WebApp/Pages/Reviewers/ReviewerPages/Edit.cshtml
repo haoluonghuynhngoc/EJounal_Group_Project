@@ -1,14 +1,14 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.Reviewers.ReviewerPages.EditModel
-@using Ejounal_WebApp.Utils;
-@using BussinessObject.Models.enums;
+@* @using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums; *@
 @{
     ViewData["Title"] = "Edit";
-    if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
-    {
-        Response.Redirect("../../Login");
-        return;
-    }
+    // if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
+    // {
+    //     Response.Redirect("../../Login");
+    //     return;
+    // }
 }
 
 <h1>Edit</h1>

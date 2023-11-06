@@ -29,6 +29,11 @@ namespace Ejounal_WebApp.Pages.Authors.ArticlesAuthor
         public Fields Fields { get; set; } = default!;
         public IActionResult OnGet()
         {
+            if (HttpContext.Session.Get<SessionAuthor>("AUTHOR")?.RoleName != RoleName.AUTHOR)
+            {
+                // Response.Redirect("../../Login");
+                return RedirectToPage("../../Login");
+            }
             ViewData["FiedsId"] = new SelectList(_fieldsRepository.GetAll(), "Id", "Name");
             ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
             return Page();
@@ -42,7 +47,7 @@ namespace Ejounal_WebApp.Pages.Authors.ArticlesAuthor
             }
             ViewData["FiedsId"] = new SelectList(_fieldsRepository.GetAll(), "Id", "Name");
             ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
-       
+
             if (_articlesRepository.FindArticleTitle(Articles.Title))
             {
                 ModelState.AddModelError("Articles.Title", "You have already title this article");

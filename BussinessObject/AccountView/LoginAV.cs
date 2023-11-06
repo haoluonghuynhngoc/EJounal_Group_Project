@@ -8,7 +8,7 @@ public class LoginAV
     [Required(ErrorMessage = "Username or email can not be empty!")]
     public string UserName { get; set; }
     [Required(ErrorMessage = "Password can not be empty")]
-    [MinLength(1, ErrorMessage = "Password must be at least 1 characters")]
+    [MinLength(5, ErrorMessage = "Password must be at least 1 characters")]
     [DataType(DataType.Password)]
     public string Password { get; set; }
 }

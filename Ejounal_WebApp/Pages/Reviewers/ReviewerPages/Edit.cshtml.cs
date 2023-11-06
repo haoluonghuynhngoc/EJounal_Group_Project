@@ -1,5 +1,7 @@
 using BussinessObject.Models;
+using BussinessObject.Models.enums;
 using DataAccess.Repository;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -17,6 +19,11 @@ namespace Ejounal_WebApp.Pages.Reviewers.ReviewerPages
         public Users Users { get; set; } = default!;
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
+            {
+                // Response.Redirect("../../Login");
+                return RedirectToPage("../../Login");
+            }
             if (id == null)
             {
                 return NotFound();

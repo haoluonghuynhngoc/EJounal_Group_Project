@@ -1,14 +1,14 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.Admins.UserPages.IndexModel
-@using Ejounal_WebApp.Utils;
-@using BussinessObject.Models.enums;
+@* @using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums; *@
 @{
     ViewData["Title"] = "Index";
-    if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
-    {
-        Response.Redirect("../../Login");
-        return;
-    }
+    // if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
+    // {
+    //     Response.Redirect("../../Login");
+    //     return;
+    // }
 }
 
 <h1>User Management</h1>
@@ -47,43 +47,46 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Users)
+        @if (Model.Users != null)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Username)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Address)
-                </td>
-                <td>
-                    @* @Html.DisplayFor(modelItem => item.Avatar) *@
-                    <img src="@item.Avatar" alt="Avatar" width="80" height="80" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BirthDay)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Lastname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PhoneNumber)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+            @foreach (var item in Model.Users)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                    <td>
+                        @* @Html.DisplayFor(modelItem => item.Avatar) *@
+                        <img src="@item.Avatar" alt="Avatar" width="80" height="80" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BirthDay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
         }
     </tbody>
 </table>

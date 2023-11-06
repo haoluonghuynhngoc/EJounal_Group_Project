@@ -1,14 +1,14 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.Admins.ArticlePages.EditModel
-@using Ejounal_WebApp.Utils;
-@using BussinessObject.Models.enums;
+@* @using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums; *@
 @{
     ViewData["Title"] = "Edit";
-    if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
-    {
-        Response.Redirect("../../Login");
-        return;
-    }
+    // if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
+    // {
+    //     Response.Redirect("../../Login");
+    //     return;
+    // }
 
 }
 

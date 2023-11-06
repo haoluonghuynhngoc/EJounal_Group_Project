@@ -1,14 +1,14 @@
 ﻿@page
 @model Ejounal_WebApp.Pages.Reviewers.ReviewerPages.IndexModel
-@using Ejounal_WebApp.Utils;
-@using BussinessObject.Models.enums;
+@* @using Ejounal_WebApp.Utils;
+@using BussinessObject.Models.enums; *@
 @{
     ViewData["Title"] = "Index";
-    if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
-    {
-        Response.Redirect("../../Login");
-        return;
-    }
+    // if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName != RoleName.REVIEWER)
+    // {
+    //     Response.Redirect("../../Login");
+    //     return;
+    // }
 }
 <h1>Wellcome User @Html.DisplayFor(model=> model.Users.Username) </h1>
 
@@ -73,6 +73,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Users?.Id">Edit</a> |
-    <a asp-page="../ArticlesReviewer/Index">Article management</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Users?.Id">Edit Your Information</a> |
+    <a asp-page="../ArticlesReviewer/Index">Article Review</a>
 </div>

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BussinessObject.Models;
+using BussinessObject.Models.enums;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using BussinessObject.Data;
-using BussinessObject.Models;
 
 namespace Ejounal_WebApp.Pages.Admins.ArticleResults
 {
@@ -19,10 +16,15 @@ namespace Ejounal_WebApp.Pages.Admins.ArticleResults
             _context = context;
         }
 
-      public ReviewResult ReviewResult { get; set; } = default!; 
+        public ReviewResult ReviewResult { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
+            {
+                //Response.Redirect("../../Login");
+                return RedirectToPage("../../Login");
+            }
             if (id == null || _context.ReviewResults == null)
             {
                 return NotFound();
@@ -33,7 +35,7 @@ namespace Ejounal_WebApp.Pages.Admins.ArticleResults
             {
                 return NotFound();
             }
-            else 
+            else
             {
                 ReviewResult = reviewresult;
             }

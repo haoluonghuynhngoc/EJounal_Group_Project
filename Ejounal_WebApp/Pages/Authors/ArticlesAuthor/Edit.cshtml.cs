@@ -1,6 +1,7 @@
 ﻿using BussinessObject.Models;
 using BussinessObject.Models.enums;
 using DataAccess.Repository;
+using Ejounal_WebApp.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -27,6 +28,11 @@ namespace Ejounal_WebApp.Pages.Authors.ArticlesAuthor
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
+            if (HttpContext.Session.Get<SessionAuthor>("AUTHOR")?.RoleName != RoleName.AUTHOR)
+            {
+                // Response.Redirect("../../Login");
+                return RedirectToPage("../../Login");
+            }
             if (id == null)
             {
                 return NotFound();

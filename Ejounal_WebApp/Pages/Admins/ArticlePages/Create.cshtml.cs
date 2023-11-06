@@ -31,6 +31,11 @@ namespace Ejounal_WebApp.Pages.Admins.ArticlePages
         public Fields Fields { get; set; } = default!;
         public IActionResult OnGet()
         {
+            if (HttpContext.Session.Get<SessionAuthor>("ADMIN")?.RoleName != RoleName.ADMIN)
+            {
+                //Response.Redirect("../../Login");
+                return RedirectToPage("../../Login");
+            }
             ViewData["FiedsId"] = new SelectList(_fieldsRepository.GetAll(), "Id", "Name");
             ViewData["JournalsId"] = new SelectList(_journalRepository.GetAll(), "Id", "Name");
             return Page();
