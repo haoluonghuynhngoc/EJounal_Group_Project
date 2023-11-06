@@ -2,6 +2,8 @@
 @model Ejounal_WebApp.Pages.RegisterAuthorModel
 @using Ejounal_WebApp.Utils;
 @using BussinessObject.Models.enums;
+
+<link href="~/css/confirm.css" rel="stylesheet" />
 @{
     ViewData["Title"] = "RegisterAuthor";
     if (HttpContext.Session.Get<SessionAuthor>("REVIEWER")?.RoleName == RoleName.REVIEWER ||
@@ -65,14 +67,19 @@
                 </dd>
             </dl>
             @Html.ValidationMessage("Error")
-            <div class="col-md-6 offset-md-3 text-center">
-                <div class="card">
-                    <div class="card-body">
-                        <h2>Do you want to change author account ? </h2>
-                        <form method="post">
-                            <button type="submit" name="confirm" value="yes" class="btn btn-success">Yes</button>
-                            <button type="submit" name="confirm" value="no" class="btn btn-danger">No</button>
-                        </form>
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Do you want to change author account ? </h2>
+                                <form method="post">
+                                    <button type="submit" name="confirm" value="yes" class="btn btn-success">Yes</button>
+                                    <button type="submit" name="confirm" value="no" class="btn btn-danger">No</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

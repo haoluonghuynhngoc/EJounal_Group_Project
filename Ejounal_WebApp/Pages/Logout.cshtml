@@ -1,4 +1,4 @@
-﻿@page
+﻿@* @page
 @model Ejounal_WebApp.Pages.LogoutModel
 @{
 }
@@ -8,6 +8,27 @@
             <div class="card">
                 <div class="card-body">
                     <h2>Do you want to logout of your account ? </h2>
+                    <form method="post">
+                        <button type="submit" name="confirm" value="yes" class="btn btn-success">Yes</button>
+                        <button type="submit" name="confirm" value="no" class="btn btn-danger">No</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@
+@page
+@model Ejounal_WebApp.Pages.LogoutModel
+
+<link href="~/css/confirm.css" rel="stylesheet" />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Confirm Logout</h2>
+                    <p>Are you sure you want to log out of your account?</p>
                     <form method="post">
                         <button type="submit" name="confirm" value="yes" class="btn btn-success">Yes</button>
                         <button type="submit" name="confirm" value="no" class="btn btn-danger">No</button>
