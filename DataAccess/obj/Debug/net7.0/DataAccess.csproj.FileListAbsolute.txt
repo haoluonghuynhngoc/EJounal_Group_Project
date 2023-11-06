@@ -14,19 +14,3 @@ C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\DataAccess\obj\Debug\n
 C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
 C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.pdb
 C:\Users\haolu\Downloads\New folder\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\bin\Debug\net7.0\appsettings.json
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\bin\Debug\net7.0\DataAccess.deps.json
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\bin\Debug\net7.0\DataAccess.dll
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\bin\Debug\net7.0\DataAccess.pdb
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\bin\Debug\net7.0\BussinessObject.dll
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\bin\Debug\net7.0\BussinessObject.pdb
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.csproj.AssemblyReference.cache
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfoInputs.cache
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.AssemblyInfo.cs
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CoreCompileInputs.cache
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.csproj.CopyComplete
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.dll
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\refint\DataAccess.dll
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\DataAccess.pdb
-D:\Ky_7\PRN221\Group_Project\EJounal_Group_Project\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll
